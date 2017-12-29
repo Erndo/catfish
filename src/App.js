@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Nav from './Nav'
@@ -11,12 +10,17 @@ class App extends Component {
       <div className="App">
         <Nav />
         <Jumbotron />
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div id='section__sign-up' className='section__sign-up'>
+          hiii
+        </div>
+        <div id='section__business' className='section__business'>
+          byyeee
+        </div>
+        <footer>
+        </footer>
       </div>
     )
   }
 }
 
-export default App;
+export default App

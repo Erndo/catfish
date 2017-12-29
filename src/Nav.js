@@ -1,5 +1,6 @@
 import React from 'react'
-import { MenuItem, Nav, NavDropdown, NavItem, Navbar} from 'react-bootstrap'
+// import NavItem from '../node_modules/react-bootstrap/es/NavItem.js'
+import { Nav, Navbar} from 'react-bootstrap'
 
 export default function ErndoNav (props) {
   return (
@@ -8,22 +9,42 @@ export default function ErndoNav (props) {
         <Navbar.Brand>
           <a href="#">Erndo</a>
         </Navbar.Brand>
+        <Navbar.Toggle />
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <NavItem eventKey={1} href="#">Link</NavItem>
-          <NavItem eventKey={2} href="#">Link</NavItem>
-          <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Action</MenuItem>
-            <MenuItem eventKey={3.2}>Another action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={3.3}>Separated link</MenuItem>
-          </NavDropdown>
+          {
+            [
+              {
+                href: 'section__sign-up',
+                text: 'Sign Up'
+              },
+              {
+                href: 'section__business',
+                text: 'For Businessess'
+              },
+              {
+                href: null,
+                text: 'For Shoppers'
+              },
+              {
+                href: 'faq',
+                text: 'FAQ'
+              },
+              {
+                href: 'contact',
+                text: 'Contact Us'
+              }
+            ].map(meta => (
+              <li role="presentation" class="">
+                <a href={`#${meta.href}`}>{meta.text}</a>
+              </li>
+            ))
+          }
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={1} href="#">Link Right</NavItem>
-          <NavItem eventKey={2} href="#">Link Right</NavItem>
+          {/* <NavItem eventKey={1} href="#">Link Right</NavItem>
+          <NavItem eventKey={2} href="#">Link Right</NavItem> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
